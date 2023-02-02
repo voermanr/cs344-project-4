@@ -8,6 +8,11 @@ int tokenize_string(char *buf, char **argv);
 int build_argv(int *argc, char *buf, char **argv);
 
 int main(int argc, char *argv[]) {
+
+    if (argc > 2) {
+        perror("too many arguments.");
+    }
+
     int tube[2];
     pipe(tube);
 
