@@ -11,7 +11,7 @@ int main (int argc, char *argv[]){
         return EXIT_FAILURE;
     }
 
-    int fd = open(argv[1], O_CREAT | O_WRONLY, 644);
+    int fd = open(argv[1], O_CREAT | O_WRONLY, 0644);
 
     int tube[2];
     if (pipe(tube) == -1) {
@@ -41,7 +41,7 @@ int main (int argc, char *argv[]){
         ssize_t bytes_read, bytes_wrote;
 
         while ((bytes_read = read(tube[0],buf, sizeof(buf))) > 0) {
-            write(fd, buf,bytes_read);
+            bytes_wrote = write(fd, buf,bytes_read);
         }
         if (bytes_read == -1) {
             perror("read");
