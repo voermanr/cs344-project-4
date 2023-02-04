@@ -4,8 +4,8 @@
 #include "string.h"
 
 int execute_child(const int *tube, char **fnc);
-
 int execute_parent(const int *tube, char **fnc, const int *argc, char *argv[]);
+
 int main(int argc, char *argv[]) {
 
     if (argc > 2) {
