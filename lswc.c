@@ -9,7 +9,7 @@ int execute_parent(const int *tube, char **fnc, const int *argc, char *argv[]);
 int main(int argc, char *argv[]) {
 
     if (argc > 2) {
-        perror("too many arguments.");
+        perror("too many arguments.\n");
     }
 
     int tube[2];
