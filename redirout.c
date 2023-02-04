@@ -6,6 +6,7 @@
 #define BUFF_SIZE 1024
 
 int main (int argc, char *argv[]){
+
     if (argc < 2) {
         fprintf(stderr,"too few arguments.");
         return EXIT_FAILURE;
@@ -49,6 +50,8 @@ int main (int argc, char *argv[]){
         if (bytes_wrote == -1) {
             perror("write");
         }
+
+        close(tube[0]);
     }
     return 0;
 }
